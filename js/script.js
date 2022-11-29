@@ -2,21 +2,6 @@ let products = [];
 let total = 0;
 let salto = '\n';
 
-
-    const btnAgregar1 = document.querySelector('#button1'),
-    btnAgregar2 = document.getElementById('button2'),
-    btnAgregar3 = document.getElementById('button3'),
-    btnAgregar4 = document.getElementById('button4'),
-    btnAgregar5 = document.getElementById('button5'),
-    btnAgregar6 = document.getElementById('button6'),
-    btnAgregar7 = document.getElementById('button7'),
-    btnAgregar8 = document.getElementById('button8'),
-    btnAgregar9 = document.getElementById('button9'),
-    btnAgregar10 = document.getElementById('button10'),
-    btnAgregar11 = document.getElementById('button11'),
-    btnAgregar12 = document.getElementById('button12');
-    
-
 function add(product, price) {
     console.log(product, price);
     products.push(product);
@@ -71,6 +56,3 @@ function pay() {
         }
     })
 }
-
-
-btnAgregar1.addEventListener('onclick', add('Air Force One', 18000))
