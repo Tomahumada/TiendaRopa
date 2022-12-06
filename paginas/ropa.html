@@ -39,8 +39,20 @@
                         <li class="nav-item">
                             <a class=" ancla" href="contacto.html">Contacto</a>
                         </li>
-                        <li class="nav-item">
-                            <i class="bi bi-cart" width="400px"></i>
+                        <li class="nav-item buttonCarro">
+                            <a class=" ancla2">Carrito</a>
+                            <ul class="ulCarro">
+                                <li>
+                                    <div class="carritonav">
+                                        <h2>Carrito de Compras:</h2>
+                                        <button class="btn btn-primary" id="verCarrito">Ver Carrito</button>
+                                        <button class="btn btn-primary" id="vaciarCarrito">Vaciar Carrito</button>
+
+                                        <div class="card-tocarro" id="contenedorCarrito"></div>
+                                        <h3 class="preTotal">Total de la compra: <span id="totalCompra">$0</span></h3>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                         <li>
 
@@ -53,16 +65,8 @@
 
     <h1>Remeras y Pantalones</h1>
     <div id='producto-container-ropa' class="row container-fluid main">
-
     </div>
- <h2>Carrito de Compras:</h2>
-    <button class="btn btn-primary" id="verCarrito">Ver Carrito</button>
-    <button class="btn btn-primary" id="vaciarCarrito">Vaciar Carrito</button>
 
-    <h3>Total de la compra: <span id="totalCompra">0</span></h3>
-    <div class="row py-3" id="contenedorCarrito"></div>
-
-    
     <footer class="py-0">
         <p class="text-center text-muted border-bottom border-top"><img src="/img/Logo.svg.webp" alt=""
                 width="10%">&copy; 2022 Company,Inc</p>

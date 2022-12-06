@@ -29,83 +29,83 @@ const remeras = [
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 14,
         cantidad: 1,
         img: '../img/pantalon2.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 15,
         cantidad: 1,
         img: '../img/remera3.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 16,
         cantidad: 1,
         img: '../img/pantalon.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 17,
         cantidad: 1,
         img: '../img/remera.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 18,
         cantidad: 1,
         img: '../img/pantalon1.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 19,
         cantidad: 1,
         img: '../img/remera2.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 20,
         cantidad: 1,
         img: '../img/pantalon4.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 21,
         cantidad: 1,
         img: '../img/remera4.webp'
     }, {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 22,
         cantidad: 1,
         img: '../img/remera5.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 23,
         cantidad: 1,
         img: '../img/pantalon6.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 24,
         cantidad: 1,
         img: '../img/pantalon5.webp'
     },
     {
         nombre: 'Calza nike ciclismo',
         precio: 20000,
-        id: 13,
+        id: 25,
         cantidad: 1,
         img: '../img/remera6.webp'
     },
@@ -121,17 +121,16 @@ remeras.forEach(producto => {
                                 <img src='${producto.img}' alt="" class='card-img-top'>
                                 <h5 class="card-title">${producto.nombre}</h5>
                                 <p class="card-text">$${producto.precio}</p>
-                                <button id="boton${producto.id}" class="btn btn-primary"> Agregar al Carrito </button>
+                                <button id="boton${producto.id}" class="button-add"> Agregar al Carrito </button>
                                 </div>
                                 </div>`
-                                
+
 
     contenedorRopa.appendChild(cardProductoRopa);
-});
-
-const boton = document.getElementById(`boton${producto.id}`);
-boton.addEventListener('click', () => {
-  agregarAlCarrito(producto.id);
+    const boton = document.getElementById(`boton${producto.id}`);
+    boton.addEventListener('click', () => {
+        agregarAlCarrito(producto.id);
+    });
 });
 
 
@@ -157,16 +156,14 @@ verCarrito.addEventListener('click', actualizarCarrito);
 function actualizarCarrito() {
     let aux = '';
     carrito.forEach((producto) => {
-        aux += `
-            <div class="card col-xl-3 col-md-6 col-sm-12">
-                <img src="img/${producto.id}.jpg" class="card-img-top img-fluid py-3">
-                <div class="card-body">
-                    <h3 class="card-title"> ${producto.nombre} </h3>
-                    <p class="card-text"> ${producto.precio} </p>
-                    <button onClick = "eliminarDelCarrito(${producto.id})" class="btn btn-primary"> Eliminar del Carrito </button>
+        aux += `<div class="cardCarrito">
+                <img src="${producto.img}" class="img-card">
+                <div class="card-body-carrito">
+                    <h3 class="card-title-carrito"> ${producto.nombre} </h3>
+                    <p class="card-text-carrito"> $${producto.precio} </p>
+                    <button onClick = "eliminarDelCarrito(${producto.id})" class="button-add-carrito"> Eliminar del Carrito </button>
                 </div>
-            </div>
-            `;
+            </div>`;
     });
 
     contenedorCarrito.innerHTML = aux;
@@ -193,6 +190,6 @@ const calcularTotalCompra = () => {
     carrito.forEach((producto) => {
         total += producto.precio * producto.cantidad;
     });
-    totalCompra.innerHTML = total;
+    totalCompra.innerHTML = '$' + total;
 };
 
